@@ -1,0 +1,20 @@
+<h3>❤︎本の投稿❤︎</h3>
+<%= form_with model: @book, local: true do |f| %>
+
+  <div>
+    タイトル
+  <% f.label :title %>
+  <%= f.text_field :title %>
+  </div>
+
+  <div>
+    内容
+  <% f.label :body %>
+  <%= f.text_area :body %>
+  </div>
+
+  </div>
+
+  <%= f.submit '投稿' %>
+
+<% end %>
