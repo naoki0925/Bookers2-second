@@ -23,10 +23,17 @@
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
-      <% elsif admin_signed_in? %>
-        <li>管理者</li>
-        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+    <% elsif admin_signed_in? %>
+      <li>管理者</li>
+      <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+      <li>
+        <%= link_to "ユーザー一覧", users_path %>
+      </li>
+      <li>
+        <%= link_to "投稿一覧", books_path %>
+      </li>
     <% else %>
+      <li><%= link_to "管理者", new_admin_session_path %></li>
       <li>
         <%= link_to "トップページ", root_path %>
       </li>
