@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   get 'home/about' => 'homes#about'
   resources :users, only: [:new, :show, :index, :create, :edit, :update]
   resources :books, only: [:new, :show, :index, :create, :edit, :update, :destroy]
+  namespace :admins do
+  resources :books
+  resources :users
+  end
 end
